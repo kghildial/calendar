@@ -20,3 +20,19 @@ function populateMonths(months) {
   }
 }
 
+// Populate Calender Days
+const monthView = document.querySelector('#monthView');
+
+var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+listDays(days);
+
+function listDays(days) {
+  var tr = document.createElement('tr');
+  days.forEach(function(day) {
+    var td = document.createElement('td');
+    td.textContent = day;
+    tr.appendChild(td);
+  });
+  monthView.appendChild(tr);
+}
