@@ -1,17 +1,6 @@
 const monthTable = document.querySelector('#monthTable');
 const yListItems = document.querySelectorAll('#yList li');
 
-// Populate months table from this array of months
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-populateMonths(months);
-
-const monthView = document.querySelector('#monthView');
-const mListItems = document.querySelectorAll('#monthTable td');
-
-// Populate calender days
-var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-listDays(days);
-
 // Create a new Date() object
 var currentDate = new Date();
 
@@ -19,6 +8,18 @@ var currentDate = new Date();
 var d_today =  currentDate.getDate();
 var m = m_today = currentDate.getMonth();
 var y = y_today = currentDate.getFullYear();
+
+// Populate months table from this array of months
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+populateMonths(months);
+
+const monthView = document.querySelector('#monthView');
+const mListItems = document.querySelectorAll('#monthTable td');
+disablePastMonths();
+
+// Populate calender days
+var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+listDays(days);
 
 // Get first day of month
 var firstIndex = getFirstIndex(y, m);

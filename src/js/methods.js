@@ -14,6 +14,17 @@ function populateMonths(months) {
   }
 }
 
+// Function to disable all past months of current year
+function disablePastMonths() {
+  mListItems.forEach(function(month) {
+    if(months.indexOf(month.textContent) < m_today) {
+      month.style.pointerEvents = 'none';
+      month.style.backgroundColor = '#eee';
+      month.style.color = '#aaa';
+    }
+  });
+}
+
 // Function for populating calender days
 function listDays(days) {
   var tr = document.createElement('tr');
@@ -56,8 +67,9 @@ function fillPrevDates(y, m, tr) {
   for(var  i = 0; i < firstIndex; i++) {
     var td = document.createElement('td');
     td.textContent = prevDate;
-    td.style.color = '#fff'; //style here
-    td.style.cursor = 'no-drop';
+    td.style.color = '#aaa';
+    td.style.backgroundColor = '#eee';
+    td.style.pointerEvents = 'none';
     tr.appendChild(td);
     prevDate++;
   }
