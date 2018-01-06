@@ -30,9 +30,9 @@ listDays(days);
 function listDays(days) {
   var tr = document.createElement('tr');
   days.forEach(function(day) {
-    var td = document.createElement('td');
-    td.textContent = day;
-    tr.appendChild(td);
+    var th = document.createElement('th');
+    th.textContent = day;
+    tr.appendChild(th);
   });
   monthView.appendChild(tr);
 }
@@ -101,7 +101,7 @@ function getMaxDate(y, m) {
 }
 
 function fillPrevDates(y, m, tr) {
-  
+
   var maxDate = getMaxDate(y,m-1);
   var prevDate = maxDate - firstIndex;
   for(var  i = 0; i < firstIndex; i++) {
@@ -141,4 +141,18 @@ function showMonth(y, m) {
     tr.appendChild(td)
     monthView.appendChild(tr);
   }
+  fadeInTD();
+}
+
+//Display tds
+
+function fadeInTD() {
+  const tds = document.querySelectorAll('#monthView td');
+  const tdArr = Array.prototype.slice.call(tds);
+
+  tdArr.forEach(function(td) {
+    setTimeout(function() {
+     td.style.opacity = '1'
+    }, 50*tdArr.indexOf(td));
+  });
 }
