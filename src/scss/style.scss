@@ -5,10 +5,15 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.onHover {
+  background-color: #d2d2d2;
+}
+
 .container {
-  width: 90%;
+  width: auto;
   margin: 0 auto;
   text-align: center;
+  box-shadow: #000;
 }
 
 td {
@@ -26,7 +31,7 @@ td {
 }
 
 #monthView {
-  margin-top: 30px;
+  margin: 0 auto;
   th {
     padding: 10px;
     background-color: #c2c2c2;
@@ -43,10 +48,6 @@ td {
       transition: .2s ease-in-out;
     }
   }
-}
-
-.onHover {
-  background-color: #d2d2d2;
 }
 
 ul {
