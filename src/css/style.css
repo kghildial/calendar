@@ -761,3 +761,15 @@ ul {
     transition: all .5s ease-in-out; }
     ul li:hover {
       background-color: #d2d2d2; }
+
+@media only screen and (min-width: 992px) {
+  #right-container {
+    float: left; }
+  #left-container {
+    float: right; }
+  #vl {
+    margin-top: 50px;
+    height: 500px;
+    width: 1px;
+    padding: 0;
+    background-color: #888; } }
