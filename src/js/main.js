@@ -36,3 +36,14 @@ function listDays(days) {
   });
   monthView.appendChild(tr);
 }
+
+var currentDate = new Date();
+
+// Get current date
+var d = d_today =  currentDate.getDate();
+var m = m_today = currentDate.getMonth();
+var y = y_today = currentDate.getFullYear();
+
+console.log(d);
+console.log(m);
+console.log(y);
