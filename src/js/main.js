@@ -44,6 +44,12 @@ var d = d_today =  currentDate.getDate();
 var m = m_today = currentDate.getMonth();
 var y = y_today = currentDate.getFullYear();
 
+// Get first day of month
+var firstIndex = new Date().getDay(y, m, d);
+var firstDay = days[firstIndex];
+
 console.log(d);
 console.log(m);
 console.log(y);
+console.log(firstIndex);
+console.log(firstDay);
