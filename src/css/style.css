@@ -738,7 +738,7 @@ td {
     opacity: 0;
     padding: 25px;
     background-color: #e2e2e2;
-    transition: opacity 1s ease-in-out; }
+    transition: opacity .5s ease-in-out; }
     #monthView td:hover {
       cursor: pointer;
       background-color: #d2d2d2;
@@ -746,3 +746,16 @@ td {
 
 .onHover {
   background-color: #d2d2d2; }
+
+ul {
+  list-style: none;
+  text-align: center;
+  padding: 0; }
+  ul li {
+    cursor: pointer;
+    background-color: #e2e2e2;
+    display: inline-block;
+    padding: 10px 20px;
+    transition: all .5s ease-in-out; }
+    ul li:hover {
+      background-color: #d2d2d2; }

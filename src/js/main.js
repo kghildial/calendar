@@ -60,6 +60,9 @@ const yListItems = document.querySelectorAll('#yList li');
 
 yListItems.forEach(function(year) {
   year.addEventListener('click', function(e) {
+    yListItems.forEach(function(year) {
+      year.classList.remove('onHover');
+    });
     year.classList.toggle('onHover');
     y = e.target.textContent;
     firstIndex = getFirstIndex(y, m);
