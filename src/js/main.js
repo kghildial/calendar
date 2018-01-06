@@ -76,14 +76,11 @@ mListItems.forEach(function(month) {
   });
 });
 
-showMonth(y, m);
-
-//Display monthView
-function showMonth(y, m) {
+function getMaxDate(y, m) {
   y += '';
   var yArr = y.split('');
   var lastTwo = Number(yArr[yArr.length - 2] + yArr[yArr.length - 1]);
-  var date = 1;
+  var maxDate;
 
   if((m % 2 === 0 && m < 7) || m === 7 || m === 9 || m === 11) {
     maxDate = 32;
@@ -98,7 +95,17 @@ function showMonth(y, m) {
     maxDate = 30;
   }
 
+  return maxDate;
+}
+
+showMonth(y, m);
+
+//Display monthView
+function showMonth(y, m) {
+  var date = 1;
+  var maxDate = getMaxDate(y, m);
   var tr = document.createElement('tr');
+  
   for(var i = firstIndex; i < days.length + 1; i++) {
     if(date === maxDate) {
       break;
