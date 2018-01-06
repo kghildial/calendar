@@ -44,12 +44,34 @@ var d = d_today =  currentDate.getDate();
 var m = m_today = currentDate.getMonth();
 var y = y_today = currentDate.getFullYear();
 
+var firstIndex = getFirstIndex(y, m);
+
 // Get first day of month
-var firstIndex = new Date().getDay(y, m, d);
+function getFirstIndex(y, m) {
+  var firstIndex = new Date(y, m, 1).getDay();
+  return firstIndex;
+}
+
 var firstDay = days[firstIndex];
 
-console.log(d);
-console.log(m);
-console.log(y);
-console.log(firstIndex);
-console.log(firstDay);
+
+// Add event handlers for getting first day
+const yListItems = document.querySelectorAll('#yList li');
+
+yListItems.forEach(function(year) {
+  year.addEventListener('click', function(e) {
+    y = e.target.textContent;
+    firstIndex = getFirstIndex(y, m);
+    firstDay = days[firstIndex];
+  });
+});
+
+const mListItems = document.querySelectorAll('#monthTable td');
+
+mListItems.forEach(function(month) {
+  month.addEventListener('click', function(e) {
+    m = months.indexOf(e.target.textContent);
+    firstIndex = getFirstIndex(y, m);
+    firstDay = days[firstIndex];
+  });
+});
