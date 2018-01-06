@@ -1,0 +1,16 @@
+{
+  "name": "calender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Kinshuk Ghildial",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-sass": "latest"
+  }
+}
