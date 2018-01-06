@@ -714,8 +714,22 @@
 
 .container {
   width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+
+td {
+  padding: 30px; }
+
+#monthTable {
   margin: 0 auto; }
 
-.col-md-6 {
-  background-color: pink;
-  border: 2px solid purple; }
+#monthView {
+  margin-top: 30px; }
+  #monthView th {
+    padding: 10px;
+    background-color: #d2d2d2; }
+  #monthView td {
+    opacity: 0;
+    padding: 25px;
+    background-color: #e2e2e2;
+    transition: all 1s ease-in-out; }
