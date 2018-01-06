@@ -75,3 +75,44 @@ mListItems.forEach(function(month) {
     firstDay = days[firstIndex];
   });
 });
+
+showMonth(y, m);
+
+//Display monthView
+function showMonth(y, m) {
+  y += '';
+  var yArr = y.split('');
+  var lastTwo = Number(yArr[yArr.length - 2] + yArr[yArr.length - 1]);
+  var date = 1;
+
+  if((m % 2 === 0 && m < 7) || m === 7 || m === 9 || m === 11) {
+    maxDate = 32;
+  }
+  else if(lastTwo % 4 === 0 && m === 1){
+    maxDate = 29;
+  }
+  else if(m === 2) {
+    maxDate = 28;
+  }
+  else {
+    maxDate = 30;
+  }
+
+  var tr = document.createElement('tr');
+  for(var i = firstIndex; i < days.length + 1; i++) {
+    if(date === maxDate) {
+      break;
+    }
+    var td = document.createElement('td');
+    td.textContent = date;
+    date++;
+
+    if(i === 7) {
+      var tr = document.createElement('tr');
+      i = 0;
+    }
+
+    tr.appendChild(td)
+    monthView.appendChild(tr);
+  }
+}
