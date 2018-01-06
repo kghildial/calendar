@@ -33,7 +33,7 @@ td {
   margin: 0 auto;
   th {
     padding: 10px;
-    background-color: #c2c2c2;
+    background-color: #b1b1b1;
     cursor: default;
   }
   td {
@@ -41,7 +41,7 @@ td {
     padding: 25px;
     transition: opacity .5s ease-in-out;
     &:hover {
-      background-color: #d2d2d2;
+      background-color: #eee;
       transition: .2s ease-in-out;
     }
   }
@@ -73,7 +73,6 @@ ul {
   }
 
   #vl {
-    margin-top: 50px;
     height: 500px;
     width: 1px;
     padding: 0;

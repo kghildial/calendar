@@ -32,6 +32,8 @@ function getFirstIndex(y, m) {
 
 showMonth(y, m);
 
+const monthViewItems = document.querySelectorAll('#monthView td');
+
 // Event handlers for year and month buttons
 yListItems.forEach(function(year) {
   if(year.textContent == y_today) {

@@ -739,14 +739,14 @@ td {
   margin: 0 auto; }
   #monthView th {
     padding: 10px;
-    background-color: #c2c2c2;
+    background-color: #b1b1b1;
     cursor: default; }
   #monthView td {
     opacity: 0;
     padding: 25px;
     transition: opacity .5s ease-in-out; }
     #monthView td:hover {
-      background-color: #d2d2d2;
+      background-color: #eee;
       transition: .2s ease-in-out; }
 
 ul {
@@ -768,7 +768,6 @@ ul {
   #left-container {
     float: right; }
   #vl {
-    margin-top: 50px;
     height: 500px;
     width: 1px;
     padding: 0;

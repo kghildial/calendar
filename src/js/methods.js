@@ -92,6 +92,9 @@ function showMonth(y, m) {
     }
     var td = document.createElement('td');
     td.textContent = date;
+    if(date == d_today && m == m_today && y == y_today) {
+      td.style.backgroundColor = '#cacaca';
+    }
     date++;
 
     if(i === 7) {
@@ -109,7 +112,7 @@ function showMonth(y, m) {
     td.style.backgroundColor = '#eee';
     td.style.pointerEvents = 'none';
     tr.appendChild(td);
-  }  
+  }
   fadeInTD();
 }
 
@@ -120,7 +123,7 @@ function fadeInTD() {
 
   tdArr.forEach(function(td) {
     setTimeout(function() {
-     td.style.opacity = '1'
+     td.style.opacity = '1';
     }, 50*tdArr.indexOf(td));
   });
 }
