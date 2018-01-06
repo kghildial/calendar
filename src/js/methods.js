@@ -48,6 +48,21 @@ function getMaxDate(y, m) {
   return maxDate;
 }
 
+// Function for filling prev months days
+function fillPrevDates(y, m, tr) {
+
+  var maxDate = getMaxDate(y,m-1);
+  var prevDate = maxDate - firstIndex;
+  for(var  i = 0; i < firstIndex; i++) {
+    var td = document.createElement('td');
+    td.textContent = prevDate;
+    td.style.color = '#fff'; //style here
+    td.style.cursor = 'no-drop';
+    tr.appendChild(td);
+    prevDate++;
+  }
+}
+
 // Display monthView
 function showMonth(y, m) {
   var date = 1;
