@@ -84,13 +84,13 @@ function getMaxDate(y, m) {
   var lastTwo = Number(yArr[yArr.length - 2] + yArr[yArr.length - 1]);
   var maxDate;
 
-  if((m % 2 === 0 && m < 7) || m === 7 || m === 9 || m === 11) {
+  if((m % 2 === 0 && m < 7) || m === 7 || m === 9 || m === 11 || m === -1) {
     maxDate = 32; // for 31 day month
   }
   else if(lastTwo % 4 === 0 && m === 1){
     maxDate = 30; // for 29 day feb
   }
-  else if(m === 2) {
+  else if(m === 1) {
     maxDate = 29; // for 28 day feb
   }
   else {
@@ -101,7 +101,8 @@ function getMaxDate(y, m) {
 }
 
 function fillPrevDates(y, m, tr) {
-  var maxDate = getMaxDate(y,m);
+  
+  var maxDate = getMaxDate(y,m-1);
   var prevDate = maxDate - firstIndex;
   for(var  i = 0; i < firstIndex; i++) {
     var td = document.createElement('td');
@@ -119,6 +120,8 @@ function showMonth(y, m) {
   var date = 1;
   var maxDate = getMaxDate(y, m);
   var tr = document.createElement('tr');
+  monthView.innerHTML = '';
+  listDays(days);
 
   fillPrevDates(y, m, tr);
   
