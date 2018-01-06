@@ -63,6 +63,7 @@ yListItems.forEach(function(year) {
     y = e.target.textContent;
     firstIndex = getFirstIndex(y, m);
     firstDay = days[firstIndex];
+    showMonth(y, m);
   });
 });
 
@@ -73,6 +74,7 @@ mListItems.forEach(function(month) {
     m = months.indexOf(e.target.textContent);
     firstIndex = getFirstIndex(y, m);
     firstDay = days[firstIndex];
+    showMonth(y, m);
   });
 });
 
