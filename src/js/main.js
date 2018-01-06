@@ -40,7 +40,7 @@ function listDays(days) {
 var currentDate = new Date();
 
 // Get current date
-var d = d_today =  currentDate.getDate();
+var d_today =  currentDate.getDate();
 var m = m_today = currentDate.getMonth();
 var y = y_today = currentDate.getFullYear();
 
@@ -59,11 +59,14 @@ var firstDay = days[firstIndex];
 const yListItems = document.querySelectorAll('#yList li');
 
 yListItems.forEach(function(year) {
+  if(year.textContent == y_today) {
+    year.classList.add('onHover');
+  }
   year.addEventListener('click', function(e) {
     yListItems.forEach(function(year) {
       year.classList.remove('onHover');
     });
-    year.classList.toggle('onHover');
+    year.classList.add('onHover');
     y = e.target.textContent;
     firstIndex = getFirstIndex(y, m);
     firstDay = days[firstIndex];
@@ -74,6 +77,9 @@ yListItems.forEach(function(year) {
 const mListItems = document.querySelectorAll('#monthTable td');
 
 mListItems.forEach(function(month) {
+  if(months.indexOf(month.textContent) == m_today) {
+    month.classList.add('onHover');
+  }
   month.addEventListener('click', function(e) {
     mListItems.forEach(function(month) {
       month.classList.remove('onHover');
@@ -116,6 +122,7 @@ function fillPrevDates(y, m, tr) {
     var td = document.createElement('td');
     td.textContent = prevDate;
     td.style.color = '#fff'; //style here
+    td.style.cursor = 'no-drop';
     tr.appendChild(td);
     prevDate++;
   }
