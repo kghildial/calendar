@@ -84,9 +84,10 @@ function showMonth(y, m) {
   listDays(days);
 
   fillPrevDates(y, m, tr);
-  
+  var temp;
   for(var i = firstIndex; i < days.length + 1; i++) {
     if(date === maxDate) {
+      temp = i;
       break;
     }
     var td = document.createElement('td');
@@ -101,6 +102,14 @@ function showMonth(y, m) {
     tr.appendChild(td)
     monthView.appendChild(tr);
   }
+
+  for(i = temp; i < days.length; i++) {
+    var td = document.createElement('td');
+    td.textContent = ''
+    td.style.backgroundColor = '#eee';
+    td.style.pointerEvents = 'none';
+    tr.appendChild(td);
+  }  
   fadeInTD();
 }
 
