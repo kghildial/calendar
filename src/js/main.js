@@ -60,6 +60,7 @@ const yListItems = document.querySelectorAll('#yList li');
 
 yListItems.forEach(function(year) {
   year.addEventListener('click', function(e) {
+    year.classList.toggle('onHover');
     y = e.target.textContent;
     firstIndex = getFirstIndex(y, m);
     firstDay = days[firstIndex];
@@ -71,6 +72,10 @@ const mListItems = document.querySelectorAll('#monthTable td');
 
 mListItems.forEach(function(month) {
   month.addEventListener('click', function(e) {
+    mListItems.forEach(function(month) {
+      month.classList.remove('onHover');
+    });
+    month.classList.add('onHover');
     m = months.indexOf(e.target.textContent);
     firstIndex = getFirstIndex(y, m);
     firstDay = days[firstIndex];

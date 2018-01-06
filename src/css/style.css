@@ -718,7 +718,12 @@
   text-align: center; }
 
 td {
-  padding: 30px; }
+  padding: 30px;
+  background-color: #e2e2e2; }
+  td:hover {
+    cursor: pointer;
+    background-color: #d2d2d2;
+    transition: .2s ease-in-out; }
 
 #monthTable {
   margin: 0 auto; }
@@ -727,9 +732,17 @@ td {
   margin-top: 30px; }
   #monthView th {
     padding: 10px;
-    background-color: #d2d2d2; }
+    background-color: #c2c2c2;
+    cursor: default; }
   #monthView td {
     opacity: 0;
     padding: 25px;
     background-color: #e2e2e2;
-    transition: all 1s ease-in-out; }
+    transition: opacity 1s ease-in-out; }
+    #monthView td:hover {
+      cursor: pointer;
+      background-color: #d2d2d2;
+      transition: .2s ease-in-out; }
+
+.onHover {
+  background-color: #d2d2d2; }

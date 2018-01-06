@@ -6,13 +6,14 @@
   text-align: center;
 }
 
-.col-md-6 {
-  // background-color: pink;
-  // border: 2px solid purple;
-}
-
 td {
   padding: 30px;
+  background-color: #e2e2e2;
+  &:hover {
+    cursor: pointer;
+    background-color: #d2d2d2;
+    transition: .2s ease-in-out;
+  }
 }
 
 #monthTable {
@@ -23,12 +24,22 @@ td {
   margin-top: 30px;
   th {
     padding: 10px;
-    background-color: #d2d2d2;
+    background-color: #c2c2c2;
+    cursor: default;
   }
   td {
     opacity: 0;
     padding: 25px;
     background-color: #e2e2e2;
-    transition: all 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: #d2d2d2;
+      transition: .2s ease-in-out;
+    }
   }
+}
+
+.onHover {
+  background-color: #d2d2d2;
 }
